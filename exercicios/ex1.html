@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vogal ou consoante</title>
+    <style>
+        input{
+            width: 80px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>VOGAL OU CONSOANTE?</h1>  
+    Digite uma letra:<input type="text" name="txt1" id="txt1">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    
+    <script>
+        function verificar() {
+            var le = window.document.getElementById('txt1')
+            var res = window.document.getElementById('res')
+            var letra = String(le.value)
+            if (letra.length == 0) {
+                res.innerHTML = '[ERRO] Digite uma letra'
+            }else {
+                if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                    res.innerHTML = `A letra ${letra} é vogal`
+                }else {
+                    res.innerHTML = `A letra ${letra} é consoante`
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bissexto</title>
+</head>
+<body>
+    <h1>Esse ano é bissexto ou não?</h1>
+    <input type="number" name="fano" id="fano">
+    <button onclick="verificar()">Verificar</button>
+    <div id="res">
+
+    </div>
+
+    <script>
+    function verificar(){
+        let anos = document.getElementById('fano')
+        let res = document.getElementById('res')
+        let ano = Number(anos.value)
+        
+        function verano(a){
+            if (a % 4 === 0 || a % 400 === 0){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        if (anos.value.length === 0){
+            alert ('[ERRO]Digite um ano primeiro para verificar!')
+        }else {
+            if(verano(ano) === true){
+                res.innerHTML = `O ano ${ano} é <strong>Bissexto</strong>`
+            }else if (verano(ano) === false)[
+                res.innerHTML = `O ano ${ano} <strong>não é Bissexto</strong>`
+            ]
+        }
+        anos.value = ''
+        anos.focus()
+    }
+    </script>
+</body>
+</html>

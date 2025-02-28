@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior numero</title>
+    <style>
+        input {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual o maior numero?</h1>
+    numero 1: <input type="number" name="n1" id="n1"><br/>
+    numero 2: <input type="number" name="n2" id="n2"><br/>
+    numero 3: <input type="number" name="n3" id="n3"><br/>
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var n3 = window.document.getElementById('n3')
+            var res = window.document.getElementById('res')
+            var n1 = Number(n1.value)
+            var n2 = Number(n2.value)
+            var n3 = Number(n3.value)
+            res.innerHTML = `<p>Você digitou os seguintes numeros: ${n1} , ${n2} , ${n3}</p>`
+            if (n1 > n2 && n1 > n3) {
+                res.innerHTML += `O maior valor é ${n1}`
+            }else if (n2 > n1 && n2 > n3) {
+                res.innerHTML += `O maior valor é ${n2}`
+            }else if (n3 > n1 && n3 > n2) {
+                res.innerHTML += `O maior valor é ${n3}`
+            }
+        }
+    </script>
+</body>
+</html>

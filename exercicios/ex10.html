@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador 2.0</title>
+    <style>
+        body{
+            font: normal 15px arial;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font: normal 20px ariaL;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteador de números</h1>
+    <button onclick="gerar()">Gerar</button>
+    <button onclick="limpar()">Limpar</button><br/>
+    Gerador: <div id="resp"></div>
+
+    <script>
+         let valores = []
+        function limpar(){
+            let resp = document.getElementById('resp')
+            resp.innerHTML = ''
+            valores = []
+        }       
+        function gerar(){
+            let resp = document.getElementById('resp')
+            if (valores.length >= 10)           {
+                resp.innerHTML = 'Todos os números já foram sorteados!'
+                return
+            }
+            let n 
+            do {
+                n = Math.floor(Math.random() * 11)
+            }while (valores.includes(n))
+            valores.push(n)
+            resp.innerHTML += `<p>${n}</p>`
+            
+        }
+    </script>
+</body>
+</html>

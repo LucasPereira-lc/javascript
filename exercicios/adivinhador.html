@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhador</title>
+    <style>
+        button{
+            width: 150px;
+            height: 55px;
+            font: normal 15px arial;
+        }
+        body{
+            font: normal 15px arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adivinhador de números</h1>
+    <button onclick="adivinhar()">Tente Adivinhar</button>
+    <button onclick="reset()">Resetar Jogo</button>
+    <div id="res">
+        já pensei em um valor entre 1 e 100...
+    </div>
+
+    <script>
+        let res = document.getElementById('res')
+        let aletn = Math.floor(Math.random()* 101)
+        let n
+
+        function reset(){
+            res.innerHTML = ''
+            aletn = Math.floor(Math.random()* 101)
+        }
+        function adivinhar(){           
+            n = prompt('Qual seu palpite?')
+            if (n == aletn){
+                res.innerHTML = ''
+                res.innerHTML += `<strong>PARABÉNS!</strong>Você acertou!Eu tinha sorteado o valor <strong>${aletn}!</strong>`
+            }else if (n < aletn){
+                res.innerHTML += `<p>Você falou ${n}.Meu número é <strong>MAIOR!</strong></p>`
+            }else if (n > aletn){
+                res.innerHTML += `<p>Você falou ${n}.Meu número é <strong>MENOR!</strong></p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

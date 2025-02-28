@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpdevice-widthort" content="width=, initial-scale=1.0">
+    <title>Média do aluno</title>
+    <style>
+        button{
+            width: 170px;
+            height: 70px;
+            font: normal 17px arial;
+        }
+        body{
+            font: normal 17px arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="clicar()">Entrar com as notas</button>
+    <div id="res">
+
+    </div>
+    <script>
+        function situacao(me){
+            if (me > 6){
+                return 'Com a média acima de 6.0, o aluno está <strong>APROVADO</strong'
+            }if(me <= 6 && me >= 3){
+                return 'Com a média entre 3.0 e 6.0, o aluno está em <strong>RECUPERAÇÃO</strong>'
+            }if (me < 3){
+                return 'com a média abaixo de 3.0, o aluno está <strong>REPROVADO</strong>'
+            }
+        }
+
+        function clicar(){
+            let res = document.getElementById('res')
+            let nome  
+            let m
+            let nota01
+            let nota02
+
+            nome = prompt('Qual o nome do aluno?')
+            nota01 = Number(prompt('Qual a primeira nota?'))
+            if(nota01 < 1 || nota01 > 10){
+                nota01 = 0
+                alert('A nota que você digitou não é válida!(A nota irá receber o valor 0)')
+            }
+            nota02 = Number(prompt('Qual a segunda nota?'))
+            if(nota02 < 1 || nota02 > 10){
+                nota02 = 0
+                alert('A nota que você digitou não é válida!(A nota irá receber o valor 0)')
+            }
+            m = (nota01 + nota02)/2
+            res.innerHTML = `<p>Analisando a situação de <strong>${nome}</strong></p>`
+            res.innerHTML += `<p>Com as notas ${nota01} e ${nota02},a média é ${m}</p>`
+            res.innerHTML += situacao(m)
+        }
+
+    </script>
+</body>
+</html>

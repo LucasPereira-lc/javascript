@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversor de string</title>
+</head>
+<body>
+   <header>
+    <h1>Conversor de String</h1>
+   </header>
+   Digite uma palavra:
+   <input type="text" name="txtn1" id="txtn1">
+   <input type="button" value="avançar" onclick="avancar()">
+   <div id="res">
+
+   </div>
+
+   <script>
+ 
+  //  let text = String(textt.value)
+      
+    function avancar(){    
+        let pala = document.getElementById('txtn1')
+        let res = document.getElementById('res')
+        let texto = String(pala.value)  
+        if (texto.length == 0){
+            alert ('erro')
+        }else {
+            res.innerHTML = ''
+            res.innerHTML += `<p>${texto.toUpperCase()}</p>`
+            res.innerHTML += `<p>${texto.toLowerCase()}</p>`
+        }  
+    }
+    
+   </script>
+</body>
+</html>

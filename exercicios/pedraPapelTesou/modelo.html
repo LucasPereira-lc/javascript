@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pedra , Papel e Tesoura!</h1>
+    </header>
+    <section>
+        <div>
+            <button onclick="comeco()">Começar Jogo</button>
+        </div>
+    </section>
+    <br>
+    <section class="resp">
+        <div id="res">
+
+        </div>
+    </section>
+    <script>
+        function comeco() {
+            let res = document.getElementById('res')
+            let mao
+            let maq = Math.floor(Math.random() * 3)
+            mao = prompt(`Qual você escolhe?
+[1]Pedra
+[2]Papel
+[3]Tesoura
+`)
+            switch (mao) {
+                case '1':
+                    if (maq === 0) {
+                        res.innerHTML = `\u{270A}  vs  \u{270A}`
+                        res.innerHTML += `<p>O jogo terminou em <strong>EMPATE!</strong></p>`
+                        res.innerHTML += `<p>Ambos jogaram <strong>Pedra!</strong></p>`
+                    } if (maq === 1) {
+                        res.innerHTML = `\u{270A}  vs  \u{1F590}`
+                        res.innerHTML += `<p>Você <strong>PERDEU!</strong></p>`
+                        res.innerHTML += `<p><strong>Pedra</strong> perde para o <strong>Papel!</strong></p>`
+                    } if (maq === 2) {
+                        res.innerHTML = `\u{270A}  vs  \u{270C}`
+                        res.innerHTML += `<p>Você <strong>GANHOU!</strong></p>`
+                        res.innerHTML += `<p><strong>Pedra</strong> ganha da <strong>Tesoura!</strong></p>`
+                    }
+                    break
+                case '2':
+                    if (maq === 0) {
+                        res.innerHTML = `\u{1F590}  vs  \u{270A}`
+                        res.innerHTML += `<p>Você <strong>GANHOU!</strong></p>`
+                        res.innerHTML += `<p><strong>Papel</strong> ganha da <strong>Pedra!</strong></p>`
+                    } if (maq === 1) {
+                        res.innerHTML = `\u{1F590}  vs  \u{1F590}`
+                        res.innerHTML += `<p>O jogo terminou em <strong>EMPATE!</strong></p>`
+                        res.innerHTML += `<p>Ambos jogaram <strong>papel!</strong></p>`
+                    } if (maq === 2) {
+                        res.innerHTML = `\u{1F590}  vs  \u{270C}`
+                        res.innerHTML += `<p>Você <strong>PERDEU!</strong></p>`
+                        res.innerHTML += `<p><strong>Papel</strong> perde para a <strong>Tesoura!</strong></p>`
+                    }
+                    break
+                case '3':
+                    if (maq === 0) {
+                        res.innerHTML = `\u{270C}  vs  \u{270A}`
+                        res.innerHTML += `<p>Você <strong>PERDEU!</strong></p>`
+                        res.innerHTML += `<p><strong>Tesoura</strong> perde para a <strong>Pedra!</strong></p>`
+                    } if (maq === 1) {
+                        res.innerHTML = `\u{270C}  vs  \u{1F590}`
+                        res.innerHTML += `<p>Você <strong>GANHOU!</strong></p>`
+                        res.innerHTML += `<p><strong>Tesoura</strong> ganha do <strong>Papel!</strong></p>`
+                    } if (maq === 2) {
+                        res.innerHTML = `\u{270C}  vs  \u{270C}`
+                        res.innerHTML += `<p>O jogo terminou em <strong>EMPATE!</strong></p>`
+                        res.innerHTML += `<p>Ambos jogaram <strong>Tesoura!</strong></p>`
+                    }
+                    break
+                default:
+                    alert('[ERRO]Número indisponível')
+            }
+        }
+    </script>
+</body>
+
+</html>

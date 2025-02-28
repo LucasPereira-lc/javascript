@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador 1.0</title>
+    <style>
+        body{
+            font: normal 15px arial;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font: normal 20px ariaL;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteador de números</h1>
+    <button onclick="gerar()">Gerar</button>
+    <button onclick="limpar()">Limpar</button><br/>
+    Gerador: <div id="resp"></div>
+
+    <script type="text/javascript">
+        function limpar(){
+            resp.innerHTML = ''
+        }
+        
+        function gerar(){
+            var resp = document.getElementById('resp')
+            resp.innerHTML += `<p>${Math.floor(21 * Math.random())}</p>`
+        }
+    
+    </script>
+</body>
+</html>

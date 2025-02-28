@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora 1.0</title>
+    <style>
+        button{
+            width: 160px;
+            height: 65px;
+            font: normal 17px arial;
+        }
+        body{
+            font: Normal 15px comic;
+        }
+        div#res{
+            font: normal 20px comic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora 1.0</h1>
+    <button onclick="iniciar()">Clique para iniciar</button>
+    <div id="res">
+Clique no botão acima para começar
+    </div>
+
+    <script>
+        let res = document.getElementById('res')
+        let n1
+        let n2
+        let rest
+
+        function iniciar(){
+            res.innerHTML = ''
+            res.innerHTML = 'Clique no botão acima para começar'
+            n1 =  Number(prompt('Primeiro valor:'))
+            n2 = Number(prompt('Segundo valor:'))
+            rest = prompt(`Valores informados: ${n1} e ${n2}.
+O que vamos fazer?
+[1]Somar
+[2]Subtrair
+[3]Multiplicar
+[4]Dividir`)
+            res.innerHTML = '<p><strong>Calculando...</strong></p>'
+            switch (rest){
+                case '1': 
+                    res.innerHTML += `<p>${n1} + ${n2} = <strong>${n1 + n2}</strong></p>`
+                    break
+                case '2':
+                    res.innerHTML += `<p>${n1} - ${n2} = <strong>${n1 - n2}</strong></p>`
+                    break
+                case '3':
+                    res.innerHTML += `<p>${n1} x ${n2} = <strong>${n1 * n2}</strong></p>`
+                    break
+                case '4':
+                    res.innerHTML += `<p>${n1} / ${n2} = <strong>${n1 / n2}</strong></p>`
+                    break
+                default :
+                res.innerHTML = `<P>OPÇÃO INVÁLIDA!Você digitou ${n1} e ${n2},mas não sei o que fazer com eles.</p>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: normal 15px Arial;
+        }
+    </style>
+</head>
+<body>
+<h1>Vizinhança do número</h1>
+    Digite um número:
+    <input type="number" name="fnum" id="fnum">
+    <input type="button" value="Verificar" onclick="verificar()">
+
+<div id="res">
+
+</div>
+
+<script>
+        
+
+    function verificar(){
+        let num = document.getElementById('fnum')
+        let res = document.getElementById('res')
+        let n = Number(num.value)
+
+        if (num.value.length == 0){
+            alert ('[ERRO]')
+        }else{
+            let ini = n - 1
+            let fim = n + 1
+            let i = Number(ini.value)
+            let f = Number(fim.value)
+
+            res.innerHTML = `<p>Número escolhido: ${n}.</p>`
+            res.innerHTML += `<p>Vizinhos do seu número:
+            ${ini}.. ${n}.. ${fim}.. </p>`
+
+         }
+         num.value = ''
+         num.focus()
+    }
+
+</script>
+</body>
+</html>

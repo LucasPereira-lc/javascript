@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa TABAJARA</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        p {
+            font: normal 15px arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>EMPRESA TABAJARA</h1>
+    <P>Olá,nosso querido funcionário(a),nós da empresa Tabajara decidimos
+       dá um aumento para cada um de vocês.Preencha o formulário abaixo para ganhar seu aumento!(Reajuste do aumento será de acordo com o salário atual do funcionário).
+    </P>
+    Digite seu salário atual:<input type="number" name="sa" id="sa"> 
+    <input type="button" value="Avançar" onclick="calcular()"> 
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular(){
+            var saatual = window.document.getElementById("sa")
+            var res = window.document.getElementById('res')
+            var saatual = Number(saatual.value)
+            var aum = ''
+            var aum = Number(aum.value)
+            var vaum = ''
+            var vaum = Number(vaum.value)
+            var nsal = ''
+            var nsal = Number(nsal.value)
+            if (saatual < 280) {
+                var aum = 20 
+                var vaum = ((saatual*aum)/100)
+                var nsal = (saatual + vaum)
+                res.innerHTML = `<p>Seu salário antes do ajuste é de: ${saatual},00R$</p>`
+                res.innerHTML += `<p>Seu aumento será de: ${aum}%</p>`
+                res.innerHTML += `<p>Valor do aumento: ${vaum}</p>`
+                res.innerHTML += `Novo salário com o aumento: ${nsal},00R$`
+            }else if (saatual >= 280 && saatual < 700) {
+                aum = 15
+                vaum = (saatual*aum)/100
+                nsal = saatual + vaum
+                res.innerHTML = `<p>Seu salário antes do ajuste é de: ${saatual},00R$</p>`
+                res.innerHTML += `<p>Seu aumento será de: ${aum}%</p>`
+                res.innerHTML += `<p>Valor do aumento: ${vaum}</p>`
+                res.innerHTML += `Novo salário com o aumento: ${nsal},00R$`
+            }else if (saatual >= 700 && saatual < 1500)  {
+                aum = 10
+                vaum = (saatual*aum)/100
+                nsal = saatual + vaum
+                res.innerHTML = `<p>Seu salário antes do ajuste é de: ${saatual},00R$</p>`
+                res.innerHTML += `<p>Seu aumento será de: ${aum}%</p>`
+                res.innerHTML += `<p>Valor do aumento: ${vaum}</p>`
+                res.innerHTML += `Novo salário com o aumento: ${nsal},00R$`
+            }else if (saatual >= 1500){
+                aum = 5
+                vaum = (saatual*aum)/100
+                nsal = saatual + vaum
+                res.innerHTML = `<p>Seu salário antes do ajuste é de: ${saatual},00R$</p>`
+                res.innerHTML += `<p>Seu aumento será de: ${aum}%</p>`
+                res.innerHTML += `<p>Valor do aumento: ${vaum}</p>`
+                res.innerHTML += `Novo salário com o aumento: ${nsal},00R$`
+            }    
+        }
+    </script>
+</body>
+</html>

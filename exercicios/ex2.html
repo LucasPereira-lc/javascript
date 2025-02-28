@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola</title>
+    <style>
+        input {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ESCOLA</h1>
+    Primeira nota do aluno: <input type="number" name="txtn1" id="txtn1"><br/>
+    Segunda nota do aluno: <input type="number" name="txtn2" id="txtn2"><br/>
+    <input type="button" value="Resultado" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var txtn1 = window.document.getElementById('txtn1')
+            var txtn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+            var nota1 = Number(txtn1.value)
+            var nota2 = Number(txtn2.value)
+            var media = ((nota1 + nota2)/2)
+            res.innerHTML = `<p>A média do aluno é ${media}</p>`
+            if (media >= 7) {
+                res.innerHTML += 'Aluno <strong>Aprovado</strong>'
+            }else if (media >= 5 && media < 7) {
+                res.innerHTML += 'Aluno em <strong>Recuperação</strong>'
+            }else if (media < 5) {
+                res.innerHTML += 'aluno <strong>Reprovado</strong>'
+            }
+        }
+    </script>
+</body>
+</html>

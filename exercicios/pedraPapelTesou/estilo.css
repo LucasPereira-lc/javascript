@@ -1,0 +1,40 @@
+body {
+    background: rgb(18, 93, 231);
+    font: normal 15pt Arial;
+    text-align: center;
+    gap: 10px;
+}
+header {
+    color: white;
+    text-align: center;
+}
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80px;
+}
+.resp{
+padding: 25px;
+}
+button {
+    width: 330px;
+    height: 110px;
+    font-style: oblique;
+    font: normal 20px oblique;
+    border: 0;
+    border-radius: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0. 2s ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+button:hover {
+    background-color: #1313eb42;
+}
